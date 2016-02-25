@@ -4,3 +4,5 @@ applications:
   memory: 512M
   instances: 1
   path: java-maven-junit-helloworld-1.0-SNAPSHOT.war
+  env:
+    JBP_CONFIG_JAVA_MAIN: '{java_main_class: com.example.javamavenjunithelloworld.HelloApp}'
