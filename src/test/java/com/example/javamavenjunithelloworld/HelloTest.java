@@ -24,7 +24,7 @@ public class HelloTest {
         Hello hi = new Hello();
         hi.sayHello(stream);
 
-        assertThat(os.toString(), is(equalTo(Hello.HELLO + "test\n")));
+        assertThat(os.toString(), is(equalTo(Hello.HELLO + "\n")));
     }
 
     @Test

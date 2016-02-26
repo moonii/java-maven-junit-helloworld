@@ -6,10 +6,10 @@ package com.example.javamavenjunithelloworld;
  */
 public class HelloApp {
 
-    static int DEFAULT_TIMES = 3;
+    static final int DEFAULT_TIMES = 3;
 
-    static int EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD = 2;
-    static int EXIT_STATUS_HELLO_FAILED = 4;
+    static final int EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD = 2;
+    static final int EXIT_STATUS_HELLO_FAILED = 4;
 
     /**
      * The main method of this program.
@@ -21,10 +21,10 @@ public class HelloApp {
         int times = DEFAULT_TIMES;
         if (args.length >= 1) {
             try {
-                times = Integer.valueOf(args[0]);
+                times = Integer.parseInt(args[0]);
             } catch (NumberFormatException e) {
-                System.err.println("I don't understand the parameter you passed me. Is it a number? " +
-                        "Parameter was: [" + args[0] + "]");
+                //System.err.println("I don't understand the parameter you passed me. Is it a number? " +
+                //        "Parameter was: [" + args[0] + "]");
                 System.exit(EXIT_STATUS_PARAMETER_NOT_UNDERSTOOD);
             }
         }
@@ -33,7 +33,7 @@ public class HelloApp {
         try {
             hi.setTimes(times);
         } catch (IllegalArgumentException e) {
-            System.err.println("Something went wrong: " + e.getMessage());
+            //System.err.println("Something went wrong: " + e.getMessage());
             System.exit(EXIT_STATUS_HELLO_FAILED);
         }
         hi.sayHello(System.out);
